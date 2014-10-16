@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+
 gem 'coffee-rails'
 gem 'eefgilm'
 gem 'faker'
@@ -11,6 +13,7 @@ gem 'uglifier'
 gem 'kgio'
 gem 'dalli'
 gem 'actionpack-page_caching'
+gem 'rails_12factor', group: :production
 
 group :test do
   gem 'rspec-rails'
