@@ -16,7 +16,7 @@ gem 'rails_12factor', group: :production
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'kaminari'
-gem 'puma'
+# gem 'puma'
 gem 'foreman'
 
 group :test do
