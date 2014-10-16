@@ -1,14 +1,11 @@
 class PostsController < ApplicationController
   caches_page :index
+  after_action :break_index_cache, only: [:show, :create, :update, :delete]
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-    end
+    fresh_when(etag: Post.first)
+    @posts = Post.includes(comments: :replies)
   end
 
   # GET /posts/1

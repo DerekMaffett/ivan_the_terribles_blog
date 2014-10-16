@@ -1,4 +1,6 @@
 class RepliesController < ApplicationController
+  after_action :break_main_cache, only: [:create, :update, :delete]
+
   # GET /replies
   # GET /replies.json
   def index

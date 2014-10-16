@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  after_action :break_main_cache, only: [:create, :update, :delete]
   # GET /comments
   # GET /comments.json
   def index
@@ -79,11 +80,11 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url }
       format.json { head :no_content }
     end
+  end
 
-    private
+  private
 
-    def comment_params
-      params.require(:comment).permit(:body, :post)
-    end
+  def comment_params
+    params.require(:comment).permit(:body, :post)
   end
 end
