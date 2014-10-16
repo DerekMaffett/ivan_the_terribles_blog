@@ -12,11 +12,10 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'kgio'
 gem 'dalli'
-gem 'actionpack-page_caching'
 gem 'rails_12factor', group: :production
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-
+gem 'kaminari'
 
 group :test do
   gem 'rspec-rails'

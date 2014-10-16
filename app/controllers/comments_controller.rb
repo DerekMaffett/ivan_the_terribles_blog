@@ -1,13 +1,12 @@
 class CommentsController < ApplicationController
-  after_action :break_main_cache, only: [:create, :update, :delete]
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @post = Post.joins(:comments).find(params[:post_id])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @comments }
+      format.json
     end
   end
 

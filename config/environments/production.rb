@@ -85,4 +85,6 @@ config.cache_store = :dalli_store,
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.middleware.use Rack::Deflater
 end
