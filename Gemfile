@@ -8,6 +8,9 @@ gem 'pg'
 gem 'rails'
 gem 'sass-rails'
 gem 'uglifier'
+gem 'kgio'
+gem 'dalli'
+gem 'actionpack-page_caching'
 
 group :test do
   gem 'rspec-rails'

@@ -10,6 +10,8 @@ GEM
       activesupport (= 4.1.6)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
+    actionpack-page_caching (1.0.2)
+      actionpack (>= 4.0.0, < 5)
     actionview (4.1.6)
       activesupport (= 4.1.6)
       builder (~> 3.1)
@@ -45,6 +47,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    dalli (2.7.2)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     eefgilm (1.1.2)
@@ -72,6 +75,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    kgio (2.9.2)
     listen (2.7.11)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -158,14 +162,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack-page_caching
   better_errors
   binding_of_caller
   coffee-rails
+  dalli
   eefgilm
   faker
   guard-bundler
   guard-rails
   jquery-rails
+  kgio
   pg
   rails
   rspec-rails
