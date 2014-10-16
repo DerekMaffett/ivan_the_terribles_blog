@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    fresh_when(etag: Post.first)
+    # fresh_when(etag: Post.first)
     @posts = Post.includes(comments: :replies)
   end
 
