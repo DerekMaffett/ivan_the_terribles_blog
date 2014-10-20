@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.includes(comments: :replies)
+    @posts = Post.page(params[:page]).per(1).includes(comments: :replies)
   end
 
   # GET /posts/1

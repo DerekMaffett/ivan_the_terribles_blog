@@ -1,22 +1,19 @@
 <h1>Ivan the Terrible's Blog</h1>
 
-<%# paginate @posts %>
-
+<%= paginate @posts %>
 
   <section class="blog">
-    <%= @posts.each do |post| %>
+    <% @posts.each do |post| %>
       <% cache post do %>
         <section class="post">
           <h2>Post <%= "#{post.id}: #{post.title}" %></h2>
           <div class="post"><%= post.body %></div>
-          <%# link_to 'Load Comments', post_comments_path(post), remote: true %>
-          <%#<div id="<%= dom_id(post) _comments"></div> %>
           <div class="comment">
-            <%= post.comments.each do |comment| %>
+            <% post.comments.each do |comment| %>
               <h3>Comment <%= comment.id %>:</h3>
               <p><%= comment.body %></p>
               <div class="reply">
-                <%= comment.replies.each do |reply| %>
+                <% comment.replies.each do |reply| %>
                   <h4>Reply <%= reply.id %>:</h4>
                   <p><%= reply.body %></p>
                 <% end %>
@@ -29,4 +26,4 @@
   </section>
 <br />
 
-<%# paginate @posts %>
+<%= paginate @posts %>

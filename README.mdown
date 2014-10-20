@@ -1,9 +1,18 @@
-# My New Blog!
+# Description
 
-I've got a lot to say, and now I have a place to say it!!!!!
+A purposefully bad blog which utilizes some tweaks to data management such
+as eager loading, database indexing, multi-threaded servers, and caching in
+order to quicken response time.
 
-Read all my amazing posts!!!!! You can load them into the app with: `rake load:blog`
+# Load Impact
 
-Since I know you want to read them all, I designed my page to show EVERYTHING on the front page of the site!!!!!
+https://loadimpact.com/test/view/1821765
 
-I know it is a little slow (but totes worth it!!!!)... _Do you know how I can make it faster?_
+The original implementation used considerable caching to get responses of
+500 ms, which collapsed under large loads due to no support for multiple
+threads.
+
+It should be noted that this blog cannot be scaled in its original format -
+heroku resources are limited and database/memory constraints prevent this type
+of blog from being supported without a paid plan. Since this was for practice,
+no such scaling will occur.
