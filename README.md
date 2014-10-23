@@ -29,6 +29,7 @@ foo%'); INSERT INTO posts (id,title,body,created_at,updated_at) VALUES (99,'hack
 ```
 
 XSS was fixed by removing the exemption from XSS protection listed in the
-application controller. SQL injection was removed by sanitizing inputs to the
-SQL query. A hash key was put into git ignore to prevent being read in a public
-repository.
+application controller and whitelisting the status parameter to only "published"
+and "unpublished", using only the whitelist in the views. SQL injection was
+removed by sanitizing inputs to the SQL query. A hash key was put into git
+ignore to prevent being read in a public repository.
