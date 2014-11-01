@@ -27,3 +27,9 @@ SQL Injection:
 ```
 foo%'); INSERT INTO posts (id,title,body,created_at,updated_at) VALUES (99,'hacked','hacked alright','2013-07-18','2013-07-18'); SELECT "posts".* FROM "posts" WHERE (title like 'hacked%
 ```
+
+XSS was fixed by removing the exemption from XSS protection listed in the
+application controller and whitelisting the status parameter to only "published"
+and "unpublished", using only the whitelist in the views. SQL injection was
+removed by sanitizing inputs to the SQL query. A hash key was put into git
+ignore to prevent being read in a public repository.
